@@ -1,0 +1,13 @@
+services:
+  node-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # VS Code Server
+      - "3000:3000"  # For your Node app
+    volumes:
+      - ./:/home/node/project
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped
