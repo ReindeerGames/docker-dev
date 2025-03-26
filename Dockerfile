@@ -32,7 +32,7 @@ RUN code-server --install-extension dbaeumer.vscode-eslint \
 
 # Configure code-server directly in the Dockerfile
 RUN mkdir -p /home/node/.config/code-server
-RUN echo "bind-addr: 0.0.0.0:8080\nauth: password\npassword: '!!PAss123!!'\ncert: false" > /home/node/.config/code-server/config.yaml
+RUN echo "bind-addr: 0.0.0.0:8080\nauth: password\npassword: 'dev_password'\ncert: false" > /home/node/.config/code-server/config.yaml
 
 # Create project directory and set permissions
 RUN mkdir -p /home/node/project && chown -R node:node /home/node
